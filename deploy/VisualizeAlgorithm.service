@@ -1,0 +1,19 @@
+[Unit]
+Description=VisualizeAlgorithm optimization learning platform
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/VisualizeAlgorithm
+ExecStart=/usr/bin/node /opt/VisualizeAlgorithm/backend/server.js
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=3042
+Restart=always
+RestartSec=3
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
